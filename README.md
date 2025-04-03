@@ -1,6 +1,6 @@
 # NVYC APP
 
-This brief documentation will give you an overview of what was used to create this app. It assumes you already have an understanding of app development. Therefore, you will need to do your own research to learn how to use these tools.
+This brief documentation will give you an overview of what was used to create this app. It assumes you already have an understanding of app development. Therefore, you will need to do your own research to learn how to use many of these tools.
 
 ## Tech Stack
 
@@ -9,7 +9,6 @@ This brief documentation will give you an overview of what was used to create th
 - JavaScript (TypeScript)
 - [Expo](https://expo.dev/)
 - [Tailwind CSS](https://tailwindcss.com/) ([Nativewind](https://www.nativewind.dev/))
-- [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
 ## Environment Setup
 
@@ -20,7 +19,7 @@ This brief documentation will give you an overview of what was used to create th
   - **Prettier - Code formatter** Formats code to make it more readable (prettier)
 - [Node.js](https://nodejs.org/en)
   Required to run all npm/npx commands
-- [EAS CLI](https://docs.expo.dev/eas-update/getting-started/#install-the-latest-eas-cli)
+- EAS CLI
   Required to run all update and build commands for expo
   Install with:
 
