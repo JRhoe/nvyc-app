@@ -1,50 +1,80 @@
-# Welcome to your Expo app 👋
+# NVYC APP
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This brief documentation will give you an overview of what was used to create this app. It assumes you already have an understanding of app development. Therefore, you will need to do your own research to learn how to use these tools.
 
-## Get started
+## Tech Stack
 
-1. Install dependencies
+- [React Native](https://reactnative.dev/)
+- HTML/CSS
+- JavaScript (TypeScript)
+- [Expo](https://expo.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) ([Nativewind](https://www.nativewind.dev/))
+- [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
-   ```bash
-   npm install
-   ```
+## Environment Setup
 
-2. Start the app
+- [Visual Studio Code](https://code.visualstudio.com/)
+  The following are some plugins I used to make coding in visual studio easier. If you do not plan on using visual studio, you can skip to the next environment setup
+  - **Tailwind CSS IntelliSense** For writing tailwind css faster
+  - **JS JSX Snippets** Usefull snipets such as "rnfc" to quickly type a react native js component
+  - **Prettier - Code formatter** Formats code to make it more readable (prettier)
+- [Node.js](https://nodejs.org/en)
+  Required to run all npm/npx commands
+- [EAS CLI](https://docs.expo.dev/eas-update/getting-started/#install-the-latest-eas-cli)
+  Required to run all update and build commands for expo
+  Install with:
 
-   ```bash
-    npx expo start
-   ```
+  ```bash
+  npm install --global eas-cli
+  ```
 
-In the output, you'll find options to open the app in a
+## Access to Expo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+To trigger builds and updates you will need access to the expo account that owns the project.
+You will need to contact James Rhoe to get access. Contact info can be gotten from Mike Moyer
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## App Updates
 
-## Get a fresh project
+This app has been set up using expo-updates because of this you will be able to push updates to the app (Android and IOS simultaneously) without needing app store approval. It's important to understand that this does have limitations. **You can only update javascript components.**
 
-When you're ready, run:
+This means that you will be able to update the following without appstore approval
+
+- Add and delete pages (including navigation tabs)
+- Change and add text/images
+- Make styling changes (text size/color)
+- Change logic for components (Image carousel)
+- Anything else Javascript based...
+
+You will not be able to change anything that effects the native code of the app. Any changes to the native code will require you to submit a new build to the app store.
+
+- App icon and name
+- Splash screen
+- Add or remove expo packages
+- see [Expo Updates docs](https://docs.expo.dev/eas-update/introduction/) for more information
+
+To trigger an update run:
 
 ```bash
-npm run reset-project
+eas update --branch preview --message "update message"
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- The branch can either be:
+  - "preview" if you are pushing updates to a preview build
+  - "production" if you are pushing it to the published app
+- The message is for internal use only. It will not be shown to the user
 
-## Learn more
+Once an update has been triggered the user will be faced with an update button the next time they open the app. To change this functionality see [app/_layout.tsx](./app/_layout.tsx).
 
-To learn more about developing your project with Expo, look at the following resources:
+## New appstore builds
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**You only need to trigger a new appstore build if the native code has been changed. Otherwise see [App Updates](#app-updates)**
 
-## Join the community
+The app build code get auto incremented by expo there is no need to change it manually. However the app version will need to be updated in [app.config.ts](./app.config.ts) if you are releasing a new version of the app.
 
-Join our community of developers creating universal apps.
+To trigger a new build run:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+eas build
+```
+
+It will take you through the setup to trigger a build

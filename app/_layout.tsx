@@ -5,7 +5,6 @@ import appIcon from "@/assets/images/2025/appIcon.png";
 import * as Updates from "expo-updates";
 import * as SplashScreen from "expo-splash-screen";
 
-
 // keeps the splashscreen visible until SplashScreen.hide() is called
 SplashScreen.preventAutoHideAsync();
 
@@ -51,7 +50,7 @@ export default function RootLayout() {
 				</View>
 			</>
 		);
-	} 
+	}
 
 	// if there is no update show the app
 	else
