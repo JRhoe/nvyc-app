@@ -1,16 +1,13 @@
 import { icons } from "@/constants";
+import { Link } from "expo-router";
 import React from "react";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Platform, StyleSheet, Text, View } from "react-native";
 
 const ShareButton = ({ accentColor }: { accentColor?: string }) => {
-	const shareButtonFunc = () => {
-		alert("No store page yet");
-	};
-
 	return (
 		<>
-			<Pressable onPress={shareButtonFunc}>
-				<View className="flex-row items-center justify-center">
+			<Link href={Platform.OS === "ios" ? "https://apps.apple.com/us/app/nv-youth-conference/id1628728422" : "https://play.google.com/store/apps/details?id=com.anonymous.nvyc"}>
+				<View className="flex-row items-center justify-center w-full">
 					<Image
 						source={icons.ShareIcon}
 						className="size-8"
@@ -22,7 +19,7 @@ const ShareButton = ({ accentColor }: { accentColor?: string }) => {
 						Share NVYC APP
 					</Text>
 				</View>
-			</Pressable>
+			</Link>
 			<View className="h-[85px] w-full"></View>
 		</>
 	);
