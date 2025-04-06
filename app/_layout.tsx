@@ -1,7 +1,15 @@
 import { Stack } from "expo-router";
 import "./globals.css";
-import { Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
+import {
+	ActivityIndicator,
+	Image,
+	Platform,
+	StatusBar,
+	Text,
+	View,
+} from "react-native";
 import appIcon from "@/assets/images/2025/appIcon.png";
+import iosSplashScreen from "@/assets/images/2025/yc25-splash.jpg";
 import * as Updates from "expo-updates";
 import * as SplashScreen from "expo-splash-screen";
 
@@ -10,7 +18,7 @@ SplashScreen.preventAutoHideAsync();
 
 // options for fading out the splash screen when ready
 SplashScreen.setOptions({
-	duration: 1000,
+	duration: 500,
 	fade: true,
 });
 
@@ -31,23 +39,39 @@ export default function RootLayout() {
 		}
 	}
 
-	// if there is an update, hide splashcreen and show "update" button
+	// if there is an update, hide splashcreen and show updating indicator
 	if (isUpdateAvailable) {
 		SplashScreen.hide();
 		return (
 			<>
 				<StatusBar backgroundColor={"#1a1a1a"} barStyle={"light-content"} />
-				<View className="flex-1 bg-[#1a1a1a] items-center justify-center gap-4">
-					<Image source={appIcon} className="h-[100px] w-[100px]" />
-					<TouchableOpacity onPress={onFetchUpdateAsync}>
-						<View className="items-center flex-center rounded-lg bg-blue-700 p-4">
-							<Text className="text-white font-robotoBold text-2xl">
-								Update Availible!
-							</Text>
-							<Text>Tap to update</Text>
+				{/* show different loading screens for android and ios */}
+				{Platform.OS === "android" && (
+					<View
+						className="w-full h-full bg-[#1a1a1a] items-center justify-center gap-4"
+						onLayout={onFetchUpdateAsync}>
+						<View className="h-[190px] w-[190px] overflow-hidden rounded-[35%] items-center justify-center">
+							<Image source={appIcon} className="w-[200px] h-[200px]" />
 						</View>
-					</TouchableOpacity>
-				</View>
+						<View className="flex-row items-center justify-center gap-4">
+							<ActivityIndicator color={"#ffffff"} />
+							<Text className="text-white font-bold text-lg">Updating...</Text>
+						</View>
+					</View>
+				)}
+				{Platform.OS === "ios" && (
+					<View className="flex-1" onLayout={onFetchUpdateAsync}>
+						<Image
+							source={iosSplashScreen}
+							className="h-full w-full absolute"
+							resizeMode="contain"
+						/>
+						<View className="h-full w-full flex-row items-end justify-center gap-4 pb-[20%]">
+							<ActivityIndicator color={"#ffffff"} />
+							<Text className="text-white font-bold text-lg">Updating...</Text>
+						</View>
+					</View>
+				)}
 			</>
 		);
 	}
