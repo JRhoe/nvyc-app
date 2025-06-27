@@ -63,7 +63,7 @@ const Photos = () => {
 				<View className="flex-row justify-between">
 					<View className="flex-row items-center gap-2">
 						<Text className="text-main-text font-robotoBold text-3xl">
-							{lastYear.year} Photos
+							{currentYear.year} Photos
 						</Text>
 						<Image
 							source={icons.picturesIcon}
@@ -168,22 +168,22 @@ const SquaresThreeColumbs = () => {
 async function getData() {
 	// add picures from all three sections (recap, preaching, and skits) into one array of pictures
 	let photoList: string[] = [];
-	if (lastYear.recap?.photos) {
-		const res = await fetch(lastYear.recap.photos);
+	if (currentYear.recap?.photos) {
+		const res = await fetch(currentYear.recap.photos);
 		const data = await res.json();
 		for (let x of data) {
 			photoList.push(x.path);
 		}
 	}
-	if (lastYear.preaching?.photos) {
-		const res = await fetch(lastYear.preaching.photos);
+	if (currentYear.preaching?.photos) {
+		const res = await fetch(currentYear.preaching.photos);
 		const data = await res.json();
 		for (let x of data) {
 			photoList.push(x.path);
 		}
 	}
-	if (lastYear.skit?.photos) {
-		const res = await fetch(lastYear.skit.photos);
+	if (currentYear.skit?.photos) {
+		const res = await fetch(currentYear.skit.photos);
 		const data = await res.json();
 		for (let x of data) {
 			photoList.push(x.path);

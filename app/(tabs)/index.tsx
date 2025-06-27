@@ -91,11 +91,8 @@ const Hero = ({ loadedFunc }: { loadedFunc: () => void }) => {
 				<Text className="text-white text-[32px] leading-[44px] text-center font-robotoBlack tracking-widest border-b-[5px] pb-2 border-main uppercase">
 					National Youth Conference 2025
 				</Text>
-				<Text className="text-main-text mt-7 text-xl/7 font-robotoSemibold">
-					Join us June 16-19, 2025 for the 42nd Annual National Youth
-					Conference! We are anticipating an exciting week of fiery preaching,
-					awesome activities, hilarious skits, and lifelong memories. Don't miss
-					out on this unforgettable event. Register Today!
+				<Text className="text-main-text mt-7 text-lg/6 font-robotoSemibold">
+					Enjoy this exciting week of fiery preaching, awesome activities, hilarious skits, and lifelong memories at the 42nd Annual National Youth Conference
 				</Text>
 			</View>
 		</>
@@ -106,27 +103,17 @@ const Media = () => {
 	return (
 		<View className="px-2 items-center mt-4">
 			<SectionHeader
-				iconURL={icons.picturesIcon}
+				iconURL={icons.videoIcon}
 				iconSize={25}
 				textSize={20}
-				text="Join Us For"
+				text="Recap and Opening Night Video"
 				accentColor="#8c1301"
 			/>
 
 			{/* Photos and Videos Link */}
 			<View className="w-full mt-2">
-				<Link href="/preaching" className="my-2">
-					<ImageView imageURL={images.powerfulPreaching} />
-				</Link>
-				<Link href="/skits" className="my-2">
-					<ImageView imageURL={images.hilariousSkits} />
-				</Link>
-				<Link href="/photos" className="my-2">
-					<ImageView imageURL={images.crazyCompetitions} />
-				</Link>
-				<Link href="/recaps" className="my-2">
-					<ImageView imageURL={images.awesomeActivities} />
-				</Link>
+				<VideoPlayer videoData={["youtube","9PA54uFBsoo"]}/>
+				<VideoPlayer videoData={["vimeo", "1094278407"]}/>
 			</View>
 		</View>
 	);
@@ -141,69 +128,21 @@ const Extras = () => {
 
 	return (
 		<View className="px-2 items-center mt-4">
-			{/* list of preachers */}
-			<SectionHeader
-				iconURL={icons.messageIcon}
-				iconSize={25}
-				textSize={20}
-				text="2025 Preachers"
-				accentColor="#8c1301"
-			/>
 			<View className="w-full">
-				<FlatList
-					data={preachersList}
-					scrollEnabled={false}
-					numColumns={2}
-					keyExtractor={(item) => item.name}
-					renderItem={(item) => (
-						<Pressable
-							onPress={() => {
-								setPreacherCardActive(true);
-								setSelectedPreacher(item.item);
-							}}
-							className="w-[50%]">
-							<View className="w-full items-center justify-center p-3">
-								<Image
-									source={item.item.portrait}
-									className="h-[200px] w-full"
-									resizeMode="contain"
-								/>
-								<Text className="text-main-text uppercase font-robotoBold">
-									{item.item.name}
-								</Text>
-							</View>
-						</Pressable>
-					)}
-					className="flex-grow-0"
-				/>
-				{/* preacher card popoup */}
-				<PreacherCard
-					preacher={selectedPreacher}
-					setPreacherActive={setPreacherCardActive}
-					cardActive={preacherCardActive}
-				/>
+				<Link href={"/photos"}>
+					<ImageView imageURL={images.photosImg}/>
+				</Link>
+				<Link href={"/videos"}>
+					<ImageView imageURL={images.photosImg}/>
+				</Link>
 			</View>
-
-			{/* Recap Video */}
-			{lastYear.recap?.recapVideo && (
-				<>
-					<SectionHeader
-						iconURL={icons.TvIcon}
-						iconSize={25}
-						textSize={20}
-						text="2024 Recap Video"
-						accentColor="#8c1301"
-					/>
-					<VideoPlayer videoData={lastYear.recap?.recapVideo} />
-				</>
-			)}
 
 			{/* About the Conference */}
 			<SectionHeader
 				iconURL={icons.InfoIcon}
 				iconSize={25}
 				textSize={20}
-				text="About the Conference"
+				text="Conference Theme"
 				accentColor="#8c1301"
 			/>
 			<ImageView imageURL={images.themeHeader} />
@@ -214,7 +153,7 @@ const Extras = () => {
 			</View>
 
 			{/* More Information accordian */}
-			<SectionHeader
+			{/* <SectionHeader
 				iconURL={icons.solidInfoIcon}
 				iconSize={25}
 				textSize={20}
@@ -225,7 +164,7 @@ const Extras = () => {
 				{moreInformation.map((item, index) => (
 					<Accorion title={item.title} details={item.details} key={index} />
 				))}
-			</View>
+			</View> */}
 		</View>
 	);
 };

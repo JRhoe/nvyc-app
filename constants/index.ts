@@ -18,12 +18,11 @@ import solidInfoIcon from "@/assets/images/icons/solidInfoIcon.png";
 import linkIcon from "@/assets/images/icons/linkIcon.png";
 
 // current year image imports
-import powerfulPreaching from "@/assets/images/2025/yc25-preaching.jpg";
-import hilariousSkits from "@/assets/images/2025/yc25-skits.jpg";
-import crazyCompetitions from "@/assets/images/2025/yc25-competitions.jpg";
-import lifelongMemories from "@/assets/images/2025/yc25-memories.jpg";
-import awesomeActivities from "@/assets/images/2025/yc25-activities.jpg";
+
 import themeHeader from "@/assets/images/2025/yc25-header.jpg";
+import themeHeader2 from "@/assets/images/2025/yc25-header2.jpg";
+import videosImg from "@/assets/images/2025/videos2025.jpg";
+import photosImg from "@/assets/images/2025/photos2025.jpg";
 
 // preacher image imports
 import brownPortait from "@/assets/images/2025/preachers/brown25.jpg";
@@ -53,12 +52,10 @@ export const icons = {
 };
 
 export const images = {
-	powerfulPreaching,
-	hilariousSkits,
-	crazyCompetitions,
-	lifelongMemories,
-	awesomeActivities,
 	themeHeader,
+	themeHeader2,
+	photosImg,
+	videosImg,
 };
 
 // recap, preaching, skit main page data
@@ -94,40 +91,35 @@ export const preachersList: preacher[] = [
 		displayName: "Pastor Jack Trieber",
 		portrait: pastorPortait,
 		location: "Host Pastor",
-		about:
-			"Pastor Trieber has been the pastor at North Valley since 1976. Under his leadership, hundreds of pastors, evangelists, missionaries, and Christian servants have been called and sent forth into the Gospel ministry. Pastor Trieber has been hosting this conference for over 40 years.",
+		about: "Pastor Trieber has been the pastor at North Valley since 1976. Under his leadership, hundreds of pastors, evangelists, missionaries, and Christian servants have been called and sent forth into the Gospel ministry. Pastor Trieber has been hosting this conference for over 40 years.",
 	},
 	{
 		name: "Joseph Brown",
 		displayName: "Pastor Joseph Brown",
 		portrait: brownPortait,
 		location: "Washington, IA",
-		about:
-			"Pastor Joseph Brown grew up in Iowa at Marion Avenue Baptist Church. Bro. Joseph served alongside his father, Pastor Larry Brown, for ten years as the youth pastor. In 2011, he became the senior pastor of his home church. His heart for God and young people is evident in his preaching and singing.",
+		about: "Pastor Joseph Brown grew up in Iowa at Marion Avenue Baptist Church. Bro. Joseph served alongside his father, Pastor Larry Brown, for ten years as the youth pastor. In 2011, he became the senior pastor of his home church. His heart for God and young people is evident in his preaching and singing.",
 	},
 	{
 		name: "Sam Epley",
 		displayName: "Pastor Sam Epley",
 		portrait: epleyPortait,
 		location: "Murfreesboro, TN",
-		about:
-			"Pastor Sam Epley was raised in a preacher’s home in Western Kentucky and was saved at the age of 5. He was privileged to be in ministry from a young age, having traveled in full time evangelism, singing and preaching with his family. He has been serving as the Senior Pastor at the Temple Baptist Church in Murfreesboro, TN since June, 2017.",
+		about: "Pastor Sam Epley was raised in a preacher’s home in Western Kentucky and was saved at the age of 5. He was privileged to be in ministry from a young age, having traveled in full time evangelism, singing and preaching with his family. He has been serving as the Senior Pastor at the Temple Baptist Church in Murfreesboro, TN since June, 2017.",
 	},
 	{
 		name: "Luke Flood",
 		displayName: "Bro. Luke Flood",
 		portrait: floodPortait,
 		location: "Conference Host",
-		about:
-			"Luke Flood is a product of North Valley. He grew up in a wonderful Christian family and had the privilege of attending North Valley Baptist Schools from kindergarten through twelfth grade. After graduation, he attended Golden State Baptist College, where he earned both his bachelor’s and master’s degrees. He currently serves on staff as the bus director and is the conference host for this year’s conference.",
+		about: "Luke Flood is a product of North Valley. He grew up in a wonderful Christian family and had the privilege of attending North Valley Baptist Schools from kindergarten through twelfth grade. After graduation, he attended Golden State Baptist College, where he earned both his bachelor’s and master’s degrees. He currently serves on staff as the bus director and is the conference host for this year’s conference.",
 	},
 	{
 		name: "Mark Stroud",
 		displayName: "Pastor Mark Stroud",
 		portrait: stroudPortait,
 		location: "Murrayville, GA",
-		about:
-			"Pastor Mark Stroud has been the Pastor of Wahoo Baptist Church since November 2001. After serving almost eight years as a youth pastor, Wahoo Baptist Church called Pastor Stroud to be their Pastor. The Lord has graciously opened many doors for Pastor Stroud to travel and preach in revivals, youth meetings, and camp meetings all across America.",
+		about: "Pastor Mark Stroud has been the Pastor of Wahoo Baptist Church since November 2001. After serving almost eight years as a youth pastor, Wahoo Baptist Church called Pastor Stroud to be their Pastor. The Lord has graciously opened many doors for Pastor Stroud to travel and preach in revivals, youth meetings, and camp meetings all across America.",
 	},
 ];
 
@@ -195,6 +187,7 @@ import logo13 from "@/assets/images/2013/logo.png";
 import logo12 from "@/assets/images/2012/logo.png";
 import logo11 from "@/assets/images/2011/logo.png";
 import logo10 from "@/assets/images/2010/logo.png";
+import preaching25 from "@/assets/images/2025/preachingFeatured.jpg";
 import preaching24 from "@/assets/images/2024/preachingFeatured.jpg";
 import preaching23 from "@/assets/images/2023/preachingFeatured.jpg";
 import preaching22 from "@/assets/images/2022/preachingFeatured.jpg";
@@ -209,6 +202,7 @@ import preaching14 from "@/assets/images/2014/YC14-preaching-1.jpg";
 import preaching13 from "@/assets/images/2013/YC13-preaching-1.jpg";
 import preaching12 from "@/assets/images/2012/YC12-preaching-1.jpg";
 import preaching11 from "@/assets/images/2011/YC11-preaching-1.jpg";
+import skit25 from "@/assets/images/2025/skitFeatured.jpg";
 import skit24 from "@/assets/images/2024/skitFeatured.jpg";
 import skit23 from "@/assets/images/2023/skitFeatured.jpg";
 import skit22 from "@/assets/images/2022/skitFeatured.jpg";
@@ -254,6 +248,7 @@ export const featuredImages = {
 	logo12,
 	logo11,
 	logo10,
+	preaching25,
 	preaching24,
 	preaching23,
 	preaching22,
@@ -268,6 +263,7 @@ export const featuredImages = {
 	preaching13,
 	preaching12,
 	preaching11,
+	skit25,
 	skit24,
 	skit23,
 	skit22,

@@ -39,11 +39,45 @@ export const years: yearType[] = [
 		setImage: featuredImages.setImage25,
 		logo: featuredImages.logo25,
 		aboutThemeLong:
-			"Our youth stand at a defining moment—a crossroad that will shape their future. This is their High Noon moment. It's a time of critical importance that will have a lasting impact. Every young person must face this moment of truth, choosing to follow God or the world. High Noon is here for the next generation—we want to encourage them to choose Jesus! Join us for the 42nd National Youth Conference and be part of this life-changing event. Register now!",
-		aboutThemeShort: "",
-		recap: null,
-		preaching: null,
-		skit: null,
+			"Our youth stand at a defining moment—a crossroad that will shape their future. This is their High Noon moment. It's a time of critical importance that will have a lasting impact. Every young person must face this moment of truth, choosing to follow God or the world. High Noon is here for the next generation—we want to encourage them to choose Jesus!",
+		aboutThemeShort: "In 2025, we encouraged young people to choose God at this 'High Noon' moment in their lives.",
+		recap: {
+			openingNightVideo: ["vimeo", "1094278407"],
+			recapVideo: ["youtube", "9PA54uFBsoo"],
+			photos: "https://nvbc.org/app/nvyc/json/2025_photos.json",
+			videos: [
+				["vimeo","1094281444"]
+			],
+		},
+		preaching: {
+			featuredImage: featuredImages.preaching25,
+			photos: "https://nvbc.org/app/nvyc/json/2025_preaching.json",
+			videos: [
+				["vimeo","1094627759"],
+				["vimeo","1094629755"],
+				["vimeo","1094631976"],
+				["vimeo","1094632563"],
+				["vimeo","1094635616"],
+				["vimeo","1094634986"],
+				["vimeo","1094826707"],
+				["vimeo","1094633743"],
+			],
+		},
+		skit: {
+			featuredImage: featuredImages.skit25,
+			introVideo: ["vimeo", "1094281444"],
+			photos: "https://nvbc.org/app/nvyc/json/2025_skit.json",
+			skitVideos: [
+				["vimeo", "1094626210"],
+				["vimeo", "1094628874"],
+				["vimeo", "1094630199"]
+			],
+			extraVideos: [
+				["youtube", "1vTz_Mf7Ytk"],
+				["vimeo", "1094630291"],
+				["vimeo", "1095702382"],
+			],
+		},
 	},
 	{
 		year: 2024,

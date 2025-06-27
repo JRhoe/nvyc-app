@@ -29,7 +29,7 @@ const Videos = () => {
                 <Hero />
                 <Media />
                 <Extras/>
-                <ShareButton accentColor="#E1AD6F"/>
+                <ShareButton accentColor="#8c1301"/>
             </ScrollView>
         </>
 	);
@@ -40,16 +40,16 @@ const Hero = () => {
 		<>
 			<View className="h-[30vh] w-full flex items-start justify-center">
 				<Image
-					source={images.themeHeader}
+					source={images.themeHeader2}
 					className="w-full h-full absolute"
 					resizeMode="cover"
 				/>
 			</View>
 			<View className="px-2 mt-7 items-center">
-				<Text className="text-main-text text-4xl text-center font-robotoBlack border-b-[5px]">
+				<Text className="text-main text-4xl text-center font-robotoBlack border-b-[5px]">
 					{currentYear.year} videos
 				</Text>
-				<Text className="text-main-text mt-5 text-lg/6 font-robotoSemibold text-center">
+				<Text className="text-main mt-5 text-lg/6 font-robotoSemibold text-center">
 					Here are a few videos from the {currentYear.year} Youth Conference.
 				</Text>
 			</View>
@@ -66,7 +66,7 @@ const Media = () => {
                     iconSize={25}
                     textSize={20}
                     text="View Videos"
-                    accentColor="#E1AD6F"
+                    accentColor="#8c1301"
                 />
             </View>
             <Text className="text-white text-sm text-center">Youth Conference Videos</Text>
@@ -79,6 +79,7 @@ const Media = () => {
             {currentYear.skit?.introVideo &&
                 <VideoPlayer videoData={currentYear.skit.introVideo}/>
             }
+            <VideoPlayer videoData={["youtube", "1vTz_Mf7Ytk"]}/>
         </>
 	);
 };
@@ -87,7 +88,7 @@ const Extras = () => {
 	return (
 		<View className="px-2 items-center mt-4">
 			{/* Stickers (IOS only) */}
-			{Platform.OS === "ios" && (
+			{/* {Platform.OS === "ios" && (
 				<>
 					<SectionHeader
 						iconURL={icons.commentIcon}
@@ -110,7 +111,7 @@ const Extras = () => {
                     </View>
 				</>
                 )
-			}
+			} */}
 
 			{/* About the Conference */}
 			<SectionHeader
@@ -118,7 +119,7 @@ const Extras = () => {
 				iconSize={25}
 				textSize={20}
 				text="Conference Theme"
-				accentColor="#E1AD6F"
+				accentColor="#8c1301"
 			/>
 			<View className="w-full">
                 <Image

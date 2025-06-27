@@ -98,7 +98,7 @@ const Hero = ({
 				{/* I dont want the theme paragraph to be shown on the skits page */}
 				{pageType !== "Skits" && (
 					<Text className="text-main-text mt-5 text-lg/6 font-robotoSemibold text-center">
-						{year.aboutThemeShort}
+						{year.year === 2025 ? year.aboutThemeLong : year.aboutThemeShort}
 					</Text>
 				)}
 			</View>
